@@ -1,0 +1,20 @@
+body {
+    background-color: #ffb71c;
+}
+
+h1 {
+    text-align: center;
+}
+
+.botoes {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+    margin-bottom: 15px;
+}
