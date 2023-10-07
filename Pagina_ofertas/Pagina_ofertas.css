@@ -1,0 +1,101 @@
+body{
+    background-color: #ffb71c;
+
+}
+
+.conteiner{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 300px;
+}
+
+.escudo_municipio{
+    text-align: center;
+    padding: 15px;
+}
+
+.button1 {
+    background-color: white;
+    color: #bc6c0e;
+    padding: 10px 20px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+.button1:hover {
+    background-color:#f7c761;
+}
+
+.button1:active {
+    transform: scale(0.95);
+    transition: transform 0.2s;
+}
+
+.button2 {
+    background-color: white;
+    color: #bc6c0e;
+    padding: 10px 20px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+.button2:hover {
+    background-color:#f7c761;
+}
+
+.button2:active {
+    transform: scale(0.95);
+    transition: transform 0.2s;
+}
+
+.button3 {
+    background-color: white;
+    color: #bc6c0e;
+    padding: 10px 20px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button3:hover {
+    background-color:#f7c761;
+}
+
+.button3:active {
+    transform: scale(0.95);
+    transition: transform 0.2s;
+}
+
+.background-cz {
+    background: url('/assets/img/') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.escudo img {
+    width: 100px; 
+    height: auto;
+}
