@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatar um Problema</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        p { font-size: large; }
+        input[type="text"] {
+            height: 40px;
+            width: 300px;
+            position: relative;
+            padding-left: 10px;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]::before {
+            content: "\f041";
+            font-family: FontAwesome;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ccc;
+        }
+        input[type="text"]:focus {
+            border-color: #007bff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffb71c;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 400px;
+            background-color: #f7f7f7;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .camera-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        label {
+            display: block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 60px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        label:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .gps-link {
+            color: #606366;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: color 0.3s ease; 
+        }
+        .gps-link:hover {
+            color: #0056b3;
+        }
+        #concluir-button {
+            background-color: #ccc;
+            color: #fff;
+            padding: 10px 175px;
+            border-radius: 5px;
+            cursor: not-allowed;
+            margin-top: 30px;
+            disabled: true;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        #concluir-button:hover {
+            background-color: #aaa;
+            transform: scale(1.05);
+        }
+        #concluir-button.active {
+            background-color: #007bff;
+            cursor: pointer;
+        }
+        #concluir-button.active:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <i class="fas fa-camera camera-icon"></i>
+        <h1>Relatar um Problema</h1>
+        <p>Informe a reclamação:</p>
+        <input type="text" id="reclamacao" placeholder="Ex.: Rua esburacada, poste caído...">
+        <p>Endereço:</p>
+        <input type="text" id="endereco" placeholder="Rua, Bairro"><br><br>
+        <span class="gps-link" onclick="abrirGPS()">Ou use sua localização atual.</span>
+        <p>Enviar foto:</p>
+        <label for="foto">Selecionar Foto</label>
+        <input type="file" id="foto" accept="image/*">
+        <button id="concluir-button" disabled onclick="concluir()">Concluir</button>
+    </div>
+
+    <script>
+        function abrirGPS() {
+            var endereco = document.getElementById("endereco").value;
+            var url = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(endereco);
+            window.open(url, "_blank");
+        }
+        function verificarCamposPreenchidos() {
+            var reclamacao = document.getElementById("reclamacao").value;
+            var endereco = document.getElementById("endereco").value;
+            var foto = document.getElementById("foto").value;
+
+            if (reclamacao && endereco && foto) {
+                document.getElementById("concluir-button").removeAttribute("disabled");
+                document.getElementById("concluir-button").classList.add("active");
+            } else {
+                document.getElementById("concluir-button").setAttribute("disabled", true);
+                document.getElementById("concluir-button").classList.remove("active");
+            }
+        }
+        document.getElementById("reclamacao").addEventListener("input", verificarCamposPreenchidos);
+        document.getElementById("endereco").addEventListener("input", verificarCamposPreenchidos);
+        document.getElementById("foto").addEventListener("change", verificarCamposPreenchidos);
+
+        function concluir() {
+            alert("Formulário enviado com sucesso!");
+            document.getElementById("reclamacao").value = "";
+            document.getElementById("endereco").value = "";
+            document.getElementById("foto").value = "";
+            document.getElementById("concluir-button").setAttribute("disabled", true);
+            document.getElementById("concluir-button").classList.remove("active");
+        }
+        function concluir() {
+        alert("Formulário enviado com sucesso!");
+        var redirecionarURL = "https://google.com";
+        document.getElementById("redirecionar-link").href = redirecionarURL;
+        document.getElementById("redirecionar-link").click();
+        }
+    </script>
+    <a id="redirecionar-link" href="#" style="display: none;"></a>
+</body>
+</html>
