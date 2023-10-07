@@ -9,7 +9,7 @@ body{
 }
 
 .logo{
-    font-size: 25px;
+    font-size: 10px;
     font-weight: bold;
 }
 
@@ -21,7 +21,7 @@ body{
 
 .btn{
     padding: 10px 8px;
-    width: 200px;
+    width: 300px;
     color: #bc6c0e;
     background-color: white; 
     border: 1px solid #ffb71c;
@@ -37,7 +37,7 @@ body{
 
 .btn1{
     padding: 10px 8px;
-    width: 200px;
+    width: 300px;
     color: #bc6c0e;
     background-color: white; 
     border: 1px solid #ffb71c;
@@ -53,7 +53,7 @@ body{
 
 .btn2{
     padding: 10px 8px;
-    width: 200px;
+    width: 300px;
     color: #bc6c0e;
     background-color: white; 
     border: 1px solid #ffb71c;
@@ -66,3 +66,61 @@ body{
 .btn2:hover{
     background-color: #d3af62;
 } 
+
+.btn3{
+    padding: 10px 8px;
+    width: 300px;
+    color: #bc6c0e;
+    background-color: white; 
+    border: 1px solid #ffb71c;
+    border-radius: 5px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.btn3:hover{
+    background-color: #d3af62;
+} 
+
+.btn4{
+    padding: 10px 8px;
+    width: 300px;
+    color: #bc6c0e;
+    background-color: white; 
+    border: 1px solid #ffb71c;
+    border-radius: 5px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.btn4:hover{
+    background-color: #d3af62;
+} 
+
+.btn5{
+    padding: 10px 8px;
+    width: 300px;
+    color: #bc6c0e;
+    background-color: white; 
+    border: 1px solid #ffb71c;
+    border-radius: 5px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.btn5:hover{
+    background-color: #d3af62;
+} 
+
+.img{
+   
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.footer{
+
+}
