@@ -106,6 +106,7 @@ color: var(--color-dark-orange-100);
 color: var(--color-orange-50);
 }
 #login_button{
+    text-decoration: none;
     border: none;
     background: var(--color-gradient);
     color: var(--color-light-50);
