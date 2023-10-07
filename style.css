@@ -1,0 +1,27 @@
+body {
+    background-color: #ffb71c  #bc6c0e;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0px;
+}
+   
+li{
+    width: 200px;
+    height: 40px;
+    background-color: #ffb71c;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    border-right: 1px solid white;
+}
+
+li:hover{
+    background-color: #bc6c0e;
+}
+
+a{
+text-decoration: none;
+color: white;
+}
