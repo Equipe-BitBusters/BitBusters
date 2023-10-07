@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superlink de Registro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffb71c;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            text-align: right;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-with-icon {
+            position: relative;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px 30px 10px 30px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            color: #333;
+        }
+        input[type="text"]::placeholder,
+        input[type="password"]::placeholder {
+            color: #888;
+        }
+        input[type="submit"] {
+            background: linear-gradient(to bottom, #ffb71c, #bc6c0e);
+            color: #ffffff;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(to bottom, #bc6c0e, #bc6c0e);
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="back-button"><i class="fas fa-arrow-left"></i></a>
+    <div class="container">
+        <h2 style="text-align: left;">Registre-se</h2>
+        <form action="seu_script_de_registro.php" method="post">
+            <div class="form-group">
+                <div class="input-with-icon">
+                    <i class="far fa-file icon"></i>
+                    <input type="text" id="cpf" name="cpf" placeholder="CPF" required oninput="formatarCPF(this)">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-with-icon">
+                    <i class="fas fa-key icon"></i>
+                    <input type="password" id="password" name="password" placeholder="Senha" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-with-icon">
+                <i class="fas fa-key icon"></i>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirme a Senha" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Registrar">
+            </div>
+        </form>
+    </div>
+    <p class="register-link">Já possui uma conta? <a href="#">Entre agora</a></p>
+
+
+
+    <script>
+        function formatarCPF(campo) {
+            let valor = campo.value.replace(/\D/g, '');
+            valor = valor.slice(0, 11);
+            if (valor.length <= 9) {
+                valor = valor.replace(/(\d{3})(\d{3})(\d{3})/, '$1.$2.$3');
+            } else {
+                valor = valor.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+            }
+            campo.value = valor;
+        }
+    </script>
+
+</body>
+</html>
