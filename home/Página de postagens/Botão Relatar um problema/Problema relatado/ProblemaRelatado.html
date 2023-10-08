@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problemas Relatados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ffb71c;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .comment-box {
+            background-color: #fff;
+            border-radius: 5px;
+            margin: 20px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .comment-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .comment-button {
+            background-color: #ffb71c;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .comment-button:hover {
+            background-color: #cf6712;
+        }
+        .report {
+            background-color: #fff;
+            border-radius: 5px;
+            margin: 20px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .user-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+            object-fit: cover;
+        }
+        .user-details {
+            flex-grow: 1;
+        }
+        .user-name {
+            font-size: 24px;
+            margin: 0;
+        }
+        .user-age {
+            font-size: 16px;
+            color: #757575;
+        }
+        .report-description {
+            margin-top: 10px;
+            margin: 0;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .carousel img {
+            width: 500px;
+            height: 500px;
+            transition: transform 0.5s ease-in-out;
+            margin-right: -490px;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 30px;
+            color: #ffb71c;
+            background-color: transparent;
+            border: none;
+            outline: none;
+        }
+        .prev-button {
+            left: 20px;
+        }
+        .next-button {
+            right: 20px;
+        }
+        .disabled {
+            pointer-events: none;
+            color: #ddd;
+        }
+        .question-box {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            background-color: #ffb71c;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .vote-counter {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .question {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .options {
+            display: flex;
+        }
+        .option-button {
+            padding: 5px 10px;
+            margin-left: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .option-button:hover {
+            background-color: #ffb71c;
+            color: #fff;
+        }
+        .comments {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        .comment {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .comment-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+        .comment-details {
+            flex-grow: 1;
+        }
+        .comment-name {
+            font-size: 18px;
+            margin: 0;
+        }
+        .comment-text {
+            margin-top: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Problemas Relatados</h1>
+    </header>
+    <div class="report">
+        <div class="user-info">
+            <img src="user1.jpg" alt="Usuário 1" class="user-avatar">
+            <div class="user-details">
+                <h2 class="user-name">Gustavo Ferreira</h2>
+                <p class="user-age">Idade: 30 anos</p>
+            </div>
+        </div>
+        <div class="carousel">
+            <img src="problem1.jpg" alt="Problema na rua principal">
+            <img src="problem2.jpg" alt="Problema na rua principal">
+            <img src="problem3.jpg" alt="Problema na rua principal">
+            <img src="problem1.jpg" alt="Problema na rua principal">
+            <img src="problem2.jpg" alt="Problema na rua principal">
+            <img src="problem3.jpg" alt="Problema na rua principal">
+        </div>
+        <h1>Rua de terra esburacada ruim para passar de carro</h1>
+        <p class="report-description">
+            13-65, R. S/N Cento e Quarenta e Três, 4 - Lot. Boa Vista, Cajazeiras - PB, 58900-000.
+        </p>
+        <div class="vote-counter">
+            <p class="vote-label">Nível de urgência:
+            <span class="vote-count">120</span></p>
+        </div>
+    </div>
+    <button class="carousel-button prev-button" onclick="prevSlide()">&#10094;</button>
+    <button class="carousel-button next-button" onclick="nextSlide()">&#10095;</button>
+    <div class="question-box">
+        <div class="question">Marcar urgência?</div>
+        <div class="options">
+            <button class="option-button" onclick="markUrgency('Sim')">Sim</button>
+            <button class="option-button" onclick="markUrgency('Não')">Não</button>
+        </div>
+    </div>
+    <script>
+        let currentSlide = 1;
+        const slides = document.querySelectorAll('.carousel img');
+        const totalSlides = slides.length;
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.transform = `translateX(${100 * (i - index)}%)`;
+            });
+        }
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+            updateButtons();
+        }
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+            updateButtons();
+        }
+        function updateButtons() {
+            const prevButton = document.querySelector('.prev-button');
+            const nextButton = document.querySelector('.next-button');
+            if (currentSlide === 0) {
+                prevButton.classList.add('disabled');
+            } else {
+                prevButton.classList.remove('disabled');
+            }
+            if (currentSlide === totalSlides - 1) {
+                nextButton.classList.add('disabled');
+            } else {
+                nextButton.classList.remove('disabled');
+            }
+        }
+        updateButtons();
+        function markUrgency(option) {
+            alert(`Você marcou: ${option}`);
+            const questionBox = document.querySelector('.question-box');
+            questionBox.style.display = 'none';
+        }
+    </script>
+    <div class="comment-box">
+        <h2>Deixe seu Comentário</h2>
+        <textarea class="comment-input" placeholder="Digite seu comentário aqui"></textarea>
+        <button class="comment-button">Enviar</button>
+    </div>
+    <div class="comments">
+        <h2>Comentários de outros usuários</h2>
+        <div class="comment">
+            <img src="user2.jpg" alt="Usuário 2" class="comment-avatar">
+            <div class="comment-details">
+                <p class="comment-name"><b>Fernanda Oliveira</b></p>
+                <p class="comment-text">Espero que asfaltem logo, todo dia passo nesta rua para deixar meus filhos na escola!!</p>
+            </div>
+        </div>
+        <div class="comment">
+            <img src="user3.jpg" alt="Usuário 3" class="comment-avatar">
+            <div class="comment-details">
+                <p class="comment-name"><b>Vitória Silva</b></p>
+                <p class="comment-text">Moro nesta rua e está péssimo de passar</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
