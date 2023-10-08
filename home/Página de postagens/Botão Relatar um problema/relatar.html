@@ -9,10 +9,11 @@
         p { font-size: large; }
         input[type="text"] {
             height: 40px;
-            width: 300px;
+            width: 100%; /* Alteração para ocupar a largura total */
             position: relative;
             padding-left: 10px;
             transition: all 0.3s ease;
+            box-sizing: border-box; /* Garante que padding e borda não adicionem à largura total */
         }
         input[type="text"]::before {
             content: "\f041";
@@ -33,14 +34,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh; /* Alterado para min-height para garantir altura mínima na tela */
         }
         .container {
             text-align: center;
             padding: 30px;
             border: 1px solid #ccc;
             border-radius: 10px;
-            width: 400px;
+            width: 90%; /* Alterado para ocupar 90% da largura da tela */
+            max-width: 400px; /* Limita a largura máxima para não ficar muito largo em telas grandes */
             background-color: #f7f7f7;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
@@ -55,7 +57,7 @@
             display: block;
             background-color: #007bff;
             color: #fff;
-            padding: 10px 60px;
+            padding: 10px;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
@@ -76,7 +78,7 @@
         #concluir-button {
             background-color: #ccc;
             color: #fff;
-            padding: 10px 175px;
+            padding: 10px;
             border-radius: 5px;
             cursor: not-allowed;
             margin-top: 30px;
@@ -141,12 +143,6 @@
             document.getElementById("foto").value = "";
             document.getElementById("concluir-button").setAttribute("disabled", true);
             document.getElementById("concluir-button").classList.remove("active");
-        }
-        function concluir() {
-        alert("Formulário enviado com sucesso!");
-        var redirecionarURL = "https://google.com";
-        document.getElementById("redirecionar-link").href = redirecionarURL;
-        document.getElementById("redirecionar-link").click();
         }
     </script>
     <a id="redirecionar-link" href="#" style="display: none;"></a>
