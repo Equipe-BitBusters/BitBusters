@@ -10,66 +10,91 @@
             font-family: Arial, sans-serif;
             background-color: #ffb71c;
             margin: 0;
+            padding: 0;
+            position: relative;
         }
+
         .container {
             padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
+
         .post {
             background-color: #fff;
             border: 1px solid #ccc;
             margin: 10px;
             padding: 10px;
-            display: inline-block;
             border-radius: 10px;
             overflow: hidden;
-            width: 200px;
-            height: 320px; 
-            transition: transform 0.3s ease-in-out; 
-            position: relative; 
+            width: calc(25% - 20px);
+            transition: transform 0.3s ease-in-out;
+            position: relative;
         }
-        .post:hover {
-            transform: scale(1.05);
-            cursor: pointer;
-        }
+
         .post img {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
             object-fit: cover;
-            width: 100%;
-            height: 150px; 
         }
+
         .post h2 {
             margin-top: 5px;
         }
+
         .post p {
             margin-top: 5px;
-            max-height: 100px;
+            max-height: 80px;
             overflow: hidden;
             text-overflow: ellipsis;
         }
+
         .voting {
             font-weight: bold;
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
             background-color: #ffb71c;
             border: 1px solid #ccc;
             padding: 5px;
             border-radius: 5px;
+            margin-top: 5px;
         }
+
         a {
             text-decoration: none;
             color: rgb(20, 20, 20);
+            display: block;
         }
+
         #detalhes {
             opacity: 0;
-            transition: opacity 0.3s ease-in-out; 
+            transition: opacity 0.3s ease-in-out;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            z-index: 999;
+            overflow: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
+
         #detalhes.active {
-            opacity: 1; 
+            opacity: 1;
         }
-        .report-button {
+
+        #imagemDetalhe {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        #reportButton {
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -77,168 +102,96 @@
             color: #fff;
             border: none;
             border-radius: 10px;
-            padding: 15px 30px; 
+            padding: 15px 30px;
             cursor: pointer;
-            font-size: 18px; 
+            font-size: 18px;
             z-index: 999;
-            transition: background-color 0.3s ease-in-out; 
+            transition: background-color 0.3s ease-in-out;
         }
-        .report-button:hover {
+
+        #reportButton:hover {
             background-color: #0056b3;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .post {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .post {
+                width: calc(100% - 20px);
+            }
         }
     </style>
 </head>
 <body>
-    <a href="pagina1.html" class="post">
-        <img src="imagem1.jpg" alt="Imagem 1">
-        <h2>Pista esburacada</h2>
-        <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
-        <div class="voting" id="votosPostagem1">152 votos</div>
-    <a href="pagina2.html" class="post">
-        <img src="imagem2.jpg" alt="Imagem 1">
-        <h2>Poste caiu com a chuva</h2>
-        <p>R. Vítor Jurema, 291-163 - Centro.</p>
-        <div class="voting" id="votosPostagem1">149 votos</div>
-    <a href="pagina3.html" class="post">
-        <img src="imagem3.jpg" alt="Imagem 1">
-        <h2>Parede desmoronou</h2>
-        <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
-        <div class="voting" id="votosPostagem1">147 votos</div>
-    </a>
-    <a href="pagina1.html" class="post">
-        <img src="imagem1.jpg" alt="Imagem 1">
-        <h2>Pista esburacada</h2>
-        <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
-        <div class="voting" id="votosPostagem1">145 votos</div>
-    <a href="pagina2.html" class="post">
-        <img src="imagem2.jpg" alt="Imagem 1">
-        <h2>Poste caiu com a chuva</h2>
-        <p>R. Vítor Jurema, 291-163 - Centro.</p>
-        <div class="voting" id="votosPostagem1">144 votos</div>
-    <a href="pagina3.html" class="post">
-        <img src="imagem3.jpg" alt="Imagem 1">
-        <h2>Parede desmoronou</h2>
-        <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
-        <div class="voting" id="votosPostagem1">141 votos</div>
-    </a><a href="pagina1.html" class="post">
-        <img src="imagem1.jpg" alt="Imagem 1">
-        <h2>Pista esburacada</h2>
-        <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
-        <div class="voting" id="votosPostagem1">136 votos</div>
-    <a href="pagina2.html" class="post">
-        <img src="imagem2.jpg" alt="Imagem 1">
-        <h2>Poste caiu com a chuva</h2>
-        <p>R. Vítor Jurema, 291-163 - Centro.</p>
-        <div class="voting" id="votosPostagem1">132 votos</div>
-    <a href="pagina3.html" class="post">
-        <img src="imagem3.jpg" alt="Imagem 1">
-        <h2>Parede desmoronou</h2>
-        <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
-        <div class="voting" id="votosPostagem1">129 votos</div>
-    </a><a href="pagina1.html" class="post">
-        <img src="imagem1.jpg" alt="Imagem 1">
-        <h2>Pista esburacada</h2>
-        <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
-        <div class="voting" id="votosPostagem1">123 votos</div>
-    <a href="pagina2.html" class="post">
-        <img src="imagem2.jpg" alt="Imagem 1">
-        <h2>Poste caiu com a chuva</h2>
-        <p>R. Vítor Jurema, 291-163 - Centro.</p>
-        <div class="voting" id="votosPostagem1">119 votos</div>
-    <a href="pagina3.html" class="post">
-        <img src="imagem3.jpg" alt="Imagem 1">
-        <h2>Parede desmoronou</h2>
-        <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
-        <div class="voting" id="votosPostagem1">116 votos</div>
-    </a><a href="pagina1.html" class="post">
-        <img src="imagem1.jpg" alt="Imagem 1">
-        <h2>Pista esburacada</h2>
-        <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
-        <div class="voting" id="votosPostagem1">92 votos</div>
-    <a href="pagina2.html" class="post">
-        <img src="imagem2.jpg" alt="Imagem 1">
-        <h2>Poste caiu com a chuva</h2>
-        <p>R. Vítor Jurema, 291-163 - Centro.</p>
-        <div class="voting" id="votosPostagem1">86 votos</div>
-    <a href="pagina3.html" class="post">
-        <img src="imagem3.jpg" alt="Imagem 1">
-        <h2>Parede desmoronou</h2>
-        <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
-        <div class="voting" id="votosPostagem1">83 votos</div>
-    </a><a href="pagina1.html" class="post">
-        <img src="imagem1.jpg" alt="Imagem 1">
-        <h2>Pista esburacada</h2>
-        <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
-        <div class="voting" id="votosPostagem1">76 votos</div>
-    <a href="pagina2.html" class="post">
-        <img src="imagem2.jpg" alt="Imagem 1">
-        <h2>Poste caiu com a chuva</h2>
-        <p>R. Vítor Jurema, 291-163 - Centro.</p>
-        <div class="voting" id="votosPostagem1">73 votos</div>
-    <a href="pagina3.html" class="post">
-        <img src="imagem3.jpg" alt="Imagem 1">
-        <h2>Parede desmoronou</h2>
-        <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
-        <div class="voting" id="votosPostagem1">67 votos</div>
-    </a><a href="pagina1.html" class="post">
-        <img src="imagem1.jpg" alt="Imagem 1">
-        <h2>Pista esburacada</h2>
-        <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
-        <div class="voting" id="votosPostagem1">62 votos</div>
-    <a href="pagina2.html" class="post">
-        <img src="imagem2.jpg" alt="Imagem 1">
-        <h2>Poste caiu com a chuva</h2>
-        <p>R. Vítor Jurema, 291-163 - Centro.</p>
-        <div class="voting" id="votosPostagem1">58 votos</div>
-    <a href="pagina3.html" class="post">
-        <img src="imagem3.jpg" alt="Imagem 1">
-        <h2>Parede desmoronou</h2>
-        <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
-        <div class="voting" id="votosPostagem1">57 votos</div>
-    </a><a href="pagina1.html" class="post">
-        <img src="imagem1.jpg" alt="Imagem 1">
-        <h2>Pista esburacada</h2>
-        <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
-        <div class="voting" id="votosPostagem1">52 votos</div>
-    <a href="pagina2.html" class="post">
-        <img src="imagem2.jpg" alt="Imagem 1">
-        <h2>Poste caiu com a chuva</h2>
-        <p>R. Vítor Jurema, 291-163 - Centro.</p>
-        <div class="voting" id="votosPostagem1">49 votos</div>
-    <a href="pagina3.html" class="post">
-        <img src="imagem3.jpg" alt="Imagem 1">
-        <h2>Parede desmoronou</h2>
-        <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
-        <div class="voting" id="votosPostagem1">47 votos</div>
-    </a><a href="pagina1.html" class="post">
-        <img src="imagem1.jpg" alt="Imagem 1">
-        <h2>Pista esburacada</h2>
-        <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
-        <div class="voting" id="votosPostagem1">41 votos</div>
-    <a href="pagina2.html" class="post">
-        <img src="imagem2.jpg" alt="Imagem 1">
-        <h2>Poste caiu com a chuva</h2>
-        <p>R. Vítor Jurema, 291-163 - Centro.</p>
-        <div class="voting" id="votosPostagem1">37 votos</div>
-    <a href="pagina3.html" class="post">
-        <img src="imagem3.jpg" alt="Imagem 1">
-        <h2>Parede desmoronou</h2>
-        <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
-        <div class="voting" id="votosPostagem1">32 votos</div>
-    </a>
-    
+    <div class="container">
+        <a href="pagina1.html" class="post">
+            <img src="imagem1.jpg" alt="Imagem 1">
+            <h2>Pista esburacada</h2>
+            <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
+            <div class="voting" id="votosPostagem1">152 votos</div>
+        </a>
+        <a href="pagina2.html" class="post">
+            <img src="imagem2.jpg" alt="Imagem 1">
+            <h2>Poste caiu com a chuva</h2>
+            <p>R. Vítor Jurema, 291-163 - Centro.</p>
+            <div class="voting" id="votosPostagem1">149 votos</div>
+        </a>
+        <a href="pagina3.html" class="post">
+            <img src="imagem3.jpg" alt="Imagem 1">
+            <h2>Parede desmoronou</h2>
+            <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
+            <div class="voting" id="votosPostagem1">147 votos</div>
+        </a>
+        <a href="pagina4.html" class="post">
+            <img src="imagem4.jpg" alt="Imagem 1">
+            <h2>Parede desmoronou</h2>
+            <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
+            <div class="voting" id="votosPostagem1">147 votos</div>
+        </a>
+        <a href="pagina5.html" class="post">
+            <img src="imagem5.jpg" alt="Imagem 1">
+            <h2>Parede desmoronou</h2>
+            <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
+            <div class="voting" id="votosPostagem1">147 votos</div>
+        </a>
+        <a href="pagina6.html" class="post">
+            <img src="imagem6.jpg" alt="Imagem 1">
+            <h2>Parede desmoronou</h2>
+            <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
+            <div class="voting" id="votosPostagem1">147 votos</div>
+        </a>
+        <a href="pagina7.html" class="post">
+            <img src="imagem7.jpg" alt="Imagem 1">
+            <h2>Parede desmoronou</h2>
+            <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
+            <div class="voting" id="votosPostagem1">147 votos</div>
+        </a>
+        <a href="pagina8.html" class="post">
+            <img src="imagem8.jpg" alt="Imagem 1">
+            <h2>Parede desmoronou</h2>
+            <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
+            <div class="voting" id="votosPostagem1">147 votos</div>
+        </a>
+        <a href="pagina9.html" class="post">
+            <img src="imagem9.jpg" alt="Imagem 1">
+            <h2>Parede desmoronou</h2>
+            <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
+            <div class="voting" id="votosPostagem1">147 votos</div>
+        </a>
+    </div>
+
     <div id="detalhes">
         <img id="imagemDetalhe" src="" alt="">
         <h3 id="tituloDetalhe"></h3>
         <p id="descricaoDetalhe"></p>
     </div>
 
-    <button class="report-button" onclick="redirecionarParaPagina()">
+    <button id="reportButton" onclick="redirecionarParaPagina()">
         <i class="fas fa-megaphone"></i> Relatar um problema
     </button>
-
-    <a href="URL_DA_PAGINA" class="report-button">
-        <i class="fas fa-megaphone"></i> Relatar um problema
-    </a>
 </body>
 </html>
