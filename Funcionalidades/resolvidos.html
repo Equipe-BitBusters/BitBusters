@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #ffb71c; /* Cor verde para indicar problemas resolvidos */
+            background-color: #ffb71c; 
             margin: 0;
         }
         .container {
@@ -72,6 +72,18 @@
             color: #FFD700; /* Cor das estrelas (amarelo) */
             margin: 2px; /* Espaço entre as estrelas */
         }
+        @media only screen and (max-width: 768px) {
+            .post {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .post {
+                width: calc(85% - 20px);
+            }
+        }
+    </style>
     </style>
 </head>
 <body>
