@@ -2,7 +2,6 @@ body {
     margin: 0;
     background-color: #ffb71c;
 }
-
 .background-cz {
     background: url('/assets/img/cz.png') center/cover no-repeat;
     height: 100vh;
@@ -11,7 +10,6 @@ body {
     align-items: center;
     justify-content: center;
 }
-
 .container {
     text-align: center;
     display: flex;
@@ -23,10 +21,24 @@ body {
 button {
     width: 350px;
     height: 65px;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
     font-size: larger;
+    background-color: #df9e11; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif; /* Fonte para o botão */
 }
-
+button:hover {
+    background-color: #ffb71c; /* Cor de fundo do botão no hover */
+    transform: scale(1.1);
+}
 footer {
     position: fixed;
     bottom: 0;
@@ -36,7 +48,7 @@ footer {
 }
 
 .escudo img {
-    width: 100px; 
+    width: 100px;
     height: auto;
 }
 
@@ -47,24 +59,25 @@ footer {
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
+    font-size: 24px; /* Tamanho da fonte do botão de voltar */
 }
 
 @media only screen and (max-width: 600px) {
     .background-cz {
-        background-size: cover; 
+        background-size: cover;
     }
 
     .container {
-        padding: 10px; 
+        padding: 10px;
     }
 
     button {
-        width: 100%; 
-        max-width: 350px; 
-        margin-bottom: 20px; 
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 10px; /* Reduzi o espaçamento entre os botões para dispositivos móveis */
     }
-    
+
     footer {
-        position: relative; 
+        position: relative;
     }
 }
