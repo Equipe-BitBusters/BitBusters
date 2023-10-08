@@ -48,3 +48,23 @@ footer {
     color: #ffffff;
     font-weight: bold;
 }
+
+@media only screen and (max-width: 600px) {
+    .background-cz {
+        background-size: cover; 
+    }
+
+    .container {
+        padding: 10px; 
+    }
+
+    button {
+        width: 100%; 
+        max-width: 350px; 
+        margin-bottom: 20px; 
+    }
+    
+    footer {
+        position: relative; 
+    }
+}
