@@ -1,11 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resolvidos</title>
+    <title>Problemas Concluídos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffb71c; /* Cor verde para indicar problemas resolvidos */
+            margin: 0;
+        }
+        .container {
+            padding: 10px;
+        }
+        .post {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin: 20px;
+            padding: 25px;
+            display: inline-block;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            height: 320px; 
+            transition: transform 0.3s ease-in-out; 
+            position: relative; 
+        }
+        .post:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        .post img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            width: 100%;
+            height: 150px; 
+        }
+        .post h2 {
+            margin-top: 5px;
+        }
+        .post p {
+            margin-top: 5px;
+            max-height: 80px; /* Ajuste a altura máxima para acomodar o texto sem sair da caixa */
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .voting {
+            font-weight: bold;
+            position: relative; /* Alterado para 'absolute' */
+            bottom: 10px;
+            background-color: #4CAF50; /* Cor verde para indicar problemas resolvidos */
+            border: 1px solid #ccc;
+            padding: 5px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            color: rgb(20, 20, 20);
+        }
+        .stars {
+            text-align: center; /* Centraliza o texto e as estrelas */
+            margin-top: 10px; /* Espaço entre o texto e as estrelas */
+            margin-bottom: 50px;
+        }
+        .stars i {
+            font-size: 18px;
+            color: #FFD700; /* Cor das estrelas (amarelo) */
+            margin: 2px; /* Espaço entre as estrelas */
+        }
+    </style>
 </head>
 <body>
-    <h1>Página voltada para uma especie de historico sobre os problemas resolvidoss pela prefeitura</h1>
+    <!-- Problema 1 Concluído -->
+    <a href="#" class="post">
+        <img src="/home/Página de postagens/imagem1.jpg" alt="Imagem 1">
+        <h2>Pista esburacada</h2>
+        <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
+        <div class="voting">Problema Resolvido</div>
+        <div class="stars">
+            <!-- Simulação de notas aleatórias com ícones de estrelas -->
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+        </div>
+    </a>
+
+    <!-- Problema 2 Concluído -->
+    <a href="#" class="post">
+        <img src="/home/Página de postagens/imagem2.jpg" alt="Imagem 2">
+        <h2>Poste caiu com a chuva</h2>
+        <p>R. Vítor Jurema, 291-163 - Centro.</p>
+        <div class="voting">Problema Resolvido</div>
+        <div class="stars">
+            <!-- Simulação de notas aleatórias com ícones de estrelas -->
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+        </div>
+    </a>
+
+    <!-- Problema 3 Concluído -->
+    <a href="#" class="post">
+        <img src="/home/Página de postagens/imagem3.jpg" alt="Imagem 3">
+        <h2>Parede desmoronou</h2>
+        <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
+        <div class="voting">Problema Resolvido</div>
+        <div class="stars">
+            <!-- Simulação de notas aleatórias com ícones de estrelas -->
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+        </div>
+    </a>
+
+    <!-- Outros problemas concluídos podem ser adicionados aqui -->
+
 </body>
 </html>
