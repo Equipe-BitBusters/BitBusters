@@ -10,91 +10,66 @@
             font-family: Arial, sans-serif;
             background-color: #ffb71c;
             margin: 0;
-            padding: 0;
-            position: relative;
         }
-
         .container {
             padding: 10px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
         }
-
         .post {
             background-color: #fff;
             border: 1px solid #ccc;
             margin: 10px;
             padding: 10px;
+            display: inline-block;
             border-radius: 10px;
             overflow: hidden;
-            width: calc(25% - 20px);
-            transition: transform 0.3s ease-in-out;
-            position: relative;
+            width: 200px;
+            height: 320px; 
+            transition: transform 0.3s ease-in-out; 
+            position: relative; 
         }
-
+        .post:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
         .post img {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
             object-fit: cover;
+            width: 100%;
+            height: 150px; 
         }
-
         .post h2 {
             margin-top: 5px;
         }
-
         .post p {
             margin-top: 5px;
-            max-height: 80px;
+            max-height: 100px;
             overflow: hidden;
             text-overflow: ellipsis;
         }
-
         .voting {
             font-weight: bold;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
             background-color: #ffb71c;
             border: 1px solid #ccc;
             padding: 5px;
             border-radius: 5px;
-            margin-top: 5px;
         }
-
         a {
             text-decoration: none;
             color: rgb(20, 20, 20);
-            display: block;
         }
-
         #detalhes {
             opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.9);
-            z-index: 999;
-            overflow: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            transition: opacity 0.3s ease-in-out; 
         }
-
         #detalhes.active {
-            opacity: 1;
+            opacity: 1; 
         }
-
-        #imagemDetalhe {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        #reportButton {
+        .report-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -102,96 +77,155 @@
             color: #fff;
             border: none;
             border-radius: 10px;
-            padding: 15px 30px;
+            padding: 15px 30px; 
             cursor: pointer;
-            font-size: 18px;
+            font-size: 18px; 
             z-index: 999;
-            transition: background-color 0.3s ease-in-out;
+            transition: background-color 0.3s ease-in-out; 
         }
-
-        #reportButton:hover {
+        .report-button:hover {
             background-color: #0056b3;
-        }
-        
-        a.post-link {
-            text-decoration: none;
-            color: rgb(20, 20, 20);
-            display: block;
-            cursor: pointer;
-        }
-        @media only screen and (max-width: 768px) {
-            .post {
-                width: calc(50% - 20px);
-            }
-        }
-
-        @media only screen and (max-width: 480px) {
-            .post {
-                width: calc(100% - 20px);
-            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        
-            <a href="pagina9.html" class="post">
-                <img src="/home/Página de postagens/defeitosemaforo.jpg" alt="Imagem 9">
-                <h2>Semaforo com defeito</h2>
-                <p>Arquimedes Gomes de Souza, 451-395 - Centro. 08/10/2023</p>
-                <div class="voting" id="votosPostagem1">4 votos - URGENTE</div>
-            </a>
-        
-        
-        <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
-            <img src="/home/Página de postagens/poste.jpg" alt="Imagem 1">
-            <h2>Luz Queimada</h2>
-            <p>Av. Des. Boto, 413 - Bairro Cristo Rei. 08/10/2023</p>
-            <div class="voting" id="votosPostagem1">152 sugestões</div>
-        </a>
-        <a href="pagina2.html" class="post">
-            <img src="imagem2.jpg" alt="Imagem 2" onclick="window.location.href='/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html';">
-            <h2>Poste caiu com a chuva</h2>
-            <p>R. Vítor Jurema, 291-163 - Centro. 07/10/2023</p>
-            <div class="voting" id="votosPostagem1">149 sugestões</div>
-        </a>
-        <a href="pagina3.html" class="post">
-            <img src="imagem3.jpg" alt="Imagem 3">
-            <h2>Parede desmoronou</h2>
-            <p>Arquimedes Gomes de Souza, 451-395 - Centro. 07/10/2023</p>
-            <div class="voting" id="votosPostagem1">147 sugestões</div>
-        </a>
-        <a href="pagina4.html" class="post">
-            <img src="/home/Página de postagens/residuos.jpg" alt="Imagem 4">
-            <h2>Estão jogando lixo na rua</h2>
-            <p>Arquimedes Gomes de Souza, 451-395 - Centro. 06/10/2023</p>
-            <div class="voting" id="votosPostagem1">110 votos</div>
-        </a>
-        <a href="pagina5.html" class="post">
-            <img src="/home/Página de postagens/acessib.jpg" alt="Imagem 5">
-            <h2>Calçada sem acessibilidade</h2>
-            <p>Arquimedes Gomes de Souza, 451-395 - Centro. 06/10/2023</p>
-            <div class="voting" id="votosPostagem1">100 votos</div>
-        </a>
-        <a href="pagina6.html" class="post">
-            <img src="/home/Página de postagens/buracocalcada.jpg" alt="Imagem 6">
-            <h2>Neglicencia com o pedestre</h2>
-            <p>Arquimedes Gomes de Souza, 451-395 - Centro. 08/10/2023</p>
-            <div class="voting" id="votosPostagem1">70 votos</div>
-        </a>
-        <a href="pagina7.html" class="post">
-            <img src="/home/Página de postagens/areaverde.jpeg" alt="Imagem 7">
-            <h2>Degradação da area verde proximo a minha casa</h2>
-            <p>Arquimedes Gomes de Souza, 451-395 - Centro. 05/10/2023</p>
-            <div class="voting" id="votosPostagem1">57 votos</div>
-        </a>
-        <a href="pagina7.html" class="post">
-            <img src="/home/Página de postagens/parques.jpg" alt="Imagem 7">
-            <h2>Falta manutenção no parque aqui de frente</h2>
-            <p>Arquimedes Gomes de Souza, 451-395 - Centro. 07/10/2023</p>
-            <div class="voting" id="votosPostagem1">57 votos</div>
-        </a>
-    </div>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem1.jpg" alt="Imagem 1">
+        <h2>Pista esburacada</h2>
+        <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
+        <div class="voting" id="votosPostagem1">152 votos</div>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem2.jpg" alt="Imagem 1">
+        <h2>Poste caiu com a chuva</h2>
+        <p>R. Vítor Jurema, 291-163 - Centro.</p>
+        <div class="voting" id="votosPostagem1">149 votos</div>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem3.jpg" alt="Imagem 1">
+        <h2>Parede desmoronou</h2>
+        <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
+        <div class="voting" id="votosPostagem1">147 votos</div>
+    </a>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem1.jpg" alt="Imagem 1">
+        <h2>Pista esburacada</h2>
+        <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
+        <div class="voting" id="votosPostagem1">145 votos</div>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem2.jpg" alt="Imagem 1">
+        <h2>Poste caiu com a chuva</h2>
+        <p>R. Vítor Jurema, 291-163 - Centro.</p>
+        <div class="voting" id="votosPostagem1">144 votos</div>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem3.jpg" alt="Imagem 1">
+        <h2>Parede desmoronou</h2>
+        <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
+        <div class="voting" id="votosPostagem1">141 votos</div>
+    </a><a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem1.jpg" alt="Imagem 1">
+        <h2>Pista esburacada</h2>
+        <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
+        <div class="voting" id="votosPostagem1">136 votos</div>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem2.jpg" alt="Imagem 1">
+        <h2>Poste caiu com a chuva</h2>
+        <p>R. Vítor Jurema, 291-163 - Centro.</p>
+        <div class="voting" id="votosPostagem1">132 votos</div>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem3.jpg" alt="Imagem 1">
+        <h2>Parede desmoronou</h2>
+        <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
+        <div class="voting" id="votosPostagem1">129 votos</div>
+    </a><a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem1.jpg" alt="Imagem 1">
+        <h2>Pista esburacada</h2>
+        <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
+        <div class="voting" id="votosPostagem1">123 votos</div>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem2.jpg" alt="Imagem 1">
+        <h2>Poste caiu com a chuva</h2>
+        <p>R. Vítor Jurema, 291-163 - Centro.</p>
+        <div class="voting" id="votosPostagem1">119 votos</div>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem3.jpg" alt="Imagem 1">
+        <h2>Parede desmoronou</h2>
+        <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
+        <div class="voting" id="votosPostagem1">116 votos</div>
+    </a><a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem1.jpg" alt="Imagem 1">
+        <h2>Pista esburacada</h2>
+        <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
+        <div class="voting" id="votosPostagem1">92 votos</div>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem2.jpg" alt="Imagem 1">
+        <h2>Poste caiu com a chuva</h2>
+        <p>R. Vítor Jurema, 291-163 - Centro.</p>
+        <div class="voting" id="votosPostagem1">86 votos</div>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem3.jpg" alt="Imagem 1">
+        <h2>Parede desmoronou</h2>
+        <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
+        <div class="voting" id="votosPostagem1">83 votos</div>
+    </a><a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem1.jpg" alt="Imagem 1">
+        <h2>Pista esburacada</h2>
+        <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
+        <div class="voting" id="votosPostagem1">76 votos</div>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem2.jpg" alt="Imagem 1">
+        <h2>Poste caiu com a chuva</h2>
+        <p>R. Vítor Jurema, 291-163 - Centro.</p>
+        <div class="voting" id="votosPostagem1">73 votos</div>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem3.jpg" alt="Imagem 1">
+        <h2>Parede desmoronou</h2>
+        <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
+        <div class="voting" id="votosPostagem1">67 votos</div>
+    </a><a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem1.jpg" alt="Imagem 1">
+        <h2>Pista esburacada</h2>
+        <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
+        <div class="voting" id="votosPostagem1">62 votos</div>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem2.jpg" alt="Imagem 1">
+        <h2>Poste caiu com a chuva</h2>
+        <p>R. Vítor Jurema, 291-163 - Centro.</p>
+        <div class="voting" id="votosPostagem1">58 votos</div>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem3.jpg" alt="Imagem 1">
+        <h2>Parede desmoronou</h2>
+        <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
+        <div class="voting" id="votosPostagem1">57 votos</div>
+    </a><a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem1.jpg" alt="Imagem 1">
+        <h2>Pista esburacada</h2>
+        <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
+        <div class="voting" id="votosPostagem1">52 votos</div>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem2.jpg" alt="Imagem 1">
+        <h2>Poste caiu com a chuva</h2>
+        <p>R. Vítor Jurema, 291-163 - Centro.</p>
+        <div class="voting" id="votosPostagem1">49 votos</div>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem3.jpg" alt="Imagem 1">
+        <h2>Parede desmoronou</h2>
+        <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
+        <div class="voting" id="votosPostagem1">47 votos</div>
+    </a><a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem1.jpg" alt="Imagem 1">
+        <h2>Pista esburacada</h2>
+        <p>Av. Des. Boto, 413 - Bairro Cristo Rei.</p>
+        <div class="voting" id="votosPostagem1">41 votos</div>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem2.jpg" alt="Imagem 1">
+        <h2>Poste caiu com a chuva</h2>
+        <p>R. Vítor Jurema, 291-163 - Centro.</p>
+        <div class="voting" id="votosPostagem1">37 votos</div>
+    <a href="/home/Página de postagens/Botão Relatar um problema/Problema relatado/ProblemaRelatado.html" class="post">
+        <img src="imagem3.jpg" alt="Imagem 1">
+        <h2>Parede desmoronou</h2>
+        <p>Arquimedes Gomes de Souza, 451-395 - Centro.</p>
+        <div class="voting" id="votosPostagem1">32 votos</div>
+    </a>
 
     <div id="detalhes">
         <img id="imagemDetalhe" src="" alt="">
@@ -199,11 +233,12 @@
         <p id="descricaoDetalhe"></p>
     </div>
 
-    <a href="/home/Página de postagens/Botão Relatar um problema/relatar.html" class="button-link">
-        <button id="reportButton">
-            <i class="fas fa-megaphone"></i> Relatar um problema
-        </button>
-    </a>
+    <button class="report-button" onclick="redirecionarParaPagina()">
+        <i class="fas fa-megaphone"></i> Relatar um problema
+    </button>
 
+    <a href="/home/Página de postagens/Botão Relatar um problema/relatar.html" class="report-button">
+        <i class="fas fa-megaphone"></i> Relatar um problema
+    </a>
 </body>
 </html>
