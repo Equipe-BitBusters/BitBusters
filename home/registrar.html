@@ -6,15 +6,28 @@
     <title>Superlink de Registro</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Playball&family=Playfair:wght@400;500;700;900&family=Poppins:wght@500;700;900&display=swap');
+
+    :root {
+        --color-light-50: #f8fafc;
+        --color-orange-50: #ffb71c;
+        --color-dark-orange-100: #bc6c0e;
+        --color-gradient: linear-gradient(90deg, var(--color-orange-50), var(--color-dark-orange-100));
+    }
         body {
-            font-family: Arial, sans-serif;
-            background-color: #ffb71c;
+            font-family: 'Montserrat', sans-serif;
+            background: var(--color-gradient);
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
         .container {
+            width: 100%;
             max-width: 400px;
-            margin: 0 auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 5px;
@@ -24,6 +37,8 @@
         .form-group {
             margin-bottom: 20px;
             text-align: left;
+            position: relative;
+            width: 100%;
         }
         label {
             display: block;
@@ -31,17 +46,26 @@
         }
         .input-with-icon {
             position: relative;
+            width: 100%;
         }
         input[type="text"],
         input[type="password"] {
-            width: 100%;
+            width: calc(100% - 60px);
             padding: 10px 30px 10px 30px;
             border: 1px solid #ccc;
             border-radius: 3px;
             color: #333;
+            box-sizing: border-box;
         }
         input[type="text"]::placeholder,
         input[type="password"]::placeholder {
+            color: #888;
+        }
+        .icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
             color: #888;
         }
         input[type="submit"] {
@@ -76,12 +100,12 @@
             color: #ffffff;
             font-weight: bold;
         }
-        .icon {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #888;
+
+        /* Adicionado media query para tornar a página responsiva para celular */
+        @media only screen and (max-width: 600px) {
+            .container {
+                max-width: 100%; /* Mudando a largura máxima para 100% em telas menores */
+            }
         }
     </style>
 </head>
@@ -117,8 +141,6 @@
         </form>
     </div>
     <p class="register-link">Já possui uma conta? <a href="/index.html"> Entre agora</a></p>
-
-
 
     <script>
         function formatarCPF(campo) {
