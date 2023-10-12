@@ -15,7 +15,7 @@
 }
 
 .background-cz {
-    background: url('/assets/img/cz.png') center/cover no-repeat;
+    background: url('../assets/img/cz.png') center/cover no-repeat;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -24,6 +24,7 @@
 }
 
 .logo img {
+    margin-top: 15%;
     width: 150px;
     height: auto;
     display: block;
@@ -36,8 +37,8 @@
 }
 
 .meio-container {
-    font-size: 1.5rem; /* Ajuste no tamanho da fonte */
-    margin-top: 1rem;
+    font-size: 1.5rem;
+    margin-top: 2rem;
     line-height: 1.5;
 }
 
@@ -46,7 +47,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 2rem;
-    gap: 10px; /* Espaçamento entre os botões */
+    gap: 10px;
 }
 
 .button a,
@@ -54,8 +55,8 @@
     display: inline-block;
     background-color: var(--color-dark-orange-100);
     color: #fff;
-    width: auto; /* Alterado para largura automática */
-    height: 80px; /* Ajuste na altura */
+    width: auto;
+    height: 80px; 
     margin: 0;
     border: none;
     border-radius: 5px;
@@ -72,20 +73,20 @@
 .button a:hover,
 .button button:hover {
     background-color: var(--color-orange-50);
-    transform: scale(1.1); /* Ajuste no fator de escala */
+    transform: scale(1.1);
 }
 
 .container_2 {
     background-color: var(--color-dark-orange-100);
     color: #fff;
-    margin-top: 10vh; /* Redução na margem superior */
-    padding: 50px;
+    margin-top: auto;
+    padding: 1px;
     text-align: center;
     width: 100%;
 }
 
 .escudo img {
-    width: 50px; /* Ajuste no tamanho da imagem */
+    width: 6%;
     height: auto;
 }
 
@@ -103,7 +104,7 @@ header {
     top: 10px;
     left: 10px;
     text-decoration: none;
-    color: #000000;
+    color: #e9a719;
     font-weight: bold;
 }
 
@@ -118,12 +119,12 @@ header {
 
 @media only screen and (max-width: 600px) {
     .meio-container {
-        font-size: 1.2rem; /* Ajuste no tamanho da fonte */
+        font-size: 1.2rem;
     }
 
     .button a,
     .button button {
-        height: 60px; /* Ajuste na altura para dispositivos móveis */
+        height: 60px;
         padding: 12px 20px;
         margin: 8px;
     }
