@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Playball&family=Playfair:wght@400;500;700;900&family=Poppins:wght@500;700;900&display=swap');
-
+:root {
+    --color-light-50: #f8fafc;
+    --color-orange-50: #ffb71c;
+    --color-dark-orange-100: #f19832;
+    --color-gradient: linear-gradient(90deg, var(--color-orange-50), var(--color-dark-orange-100));
+}
 body{
-    background-color: #ffb71c;
+    background: var(--color-gradient);
     padding: 25px;
     font-family:'Montserrat', sans-serif;
 }
@@ -45,7 +50,7 @@ table {
         }
 
         tr:hover {
-            background-color: #ddd;
+            background-color: #ffffff65;
         }
 
         footer {
@@ -59,4 +64,12 @@ table {
         .escudo img {
             width: 100px; 
             height: auto;
+        }
+        .back-button {
+            font-size:24px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            text-decoration: none;
+            color: #ffffff;
         }

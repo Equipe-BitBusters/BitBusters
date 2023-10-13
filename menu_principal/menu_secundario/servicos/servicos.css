@@ -1,7 +1,15 @@
+.background-cz {
+    background: url('../../../assets/img/cz.png') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 body {
-    background-color: #ffb71c;
+    background-color: #eeeeee;
     margin: 0;
-    font-family: Arial, sans-serif; /* Alterei a fonte para uma fonte mais comum */
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container {
@@ -16,34 +24,23 @@ body {
 button {
     width: 350px;
     height: 65px;
-    margin-bottom: 20px; /* Reduzi o espaçamento entre os botões para melhor estética */
-    font-size: larger;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    color: #fff; /* Alterei a cor do texto dos botões para branco */
+    margin-bottom: 20px;
+    font-size: 17px;
     background-color: #df9e11;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Adicionei transição de sombra */
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.1s ease, transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
 }
 
 button:hover {
-    background-color: #f7f299;
-    transform: scale(1.05); /* Aumenta a escala em 5% ao passar o mouse */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Adicionei uma leve sombra no hover */
-}
-
-button:active {
-    transform: scale(0.95); /* Reduz a escala em 5% ao ser clicado */
-    box-shadow: none; /* Remove a sombra quando clicado */
-}
-
-.background-cz {
-    background: url('/assets/img/cz.png') center/cover no-repeat;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background-color: #ffb71c;
+    transform: scale(1.02);
 }
 
 footer {
@@ -55,35 +52,18 @@ footer {
 }
 
 .escudo img {
-    width: 100px;
+    width: 100px; 
     height: auto;
 }
 
-/* Adicionei uma classe para o escudo do município */
 .escudo_municipio {
     text-align: center;
     padding: 15px;
 }
 
-/* Defina estilos personalizados para links */
 a {
     text-decoration: none;
-    color: #df9e11; /* Alterei a cor dos links */
-    font-weight: bold;
-}
-
-a:hover {
-    color: #e2a625; /* Alterei a cor dos links no hover */
-}
-
-
-.background-cz {
-    background: url('/assets/img/cz.png') center/cover no-repeat;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    color: #df9e11;
 }
 
 footer {
@@ -100,10 +80,10 @@ footer {
 }
 
 .back-button {
+    font-size:24px;
     position: absolute;
     top: 10px;
     left: 10px;
     text-decoration: none;
-    color: #000000;
-    font-weight: bold;
+    color: #df9e11;
 }

@@ -1,0 +1,97 @@
+:root {
+    --color-light-50: #f8fafc;
+    --color-orange-50: #ffb71c;
+    --color-dark-orange-100: #f19832;
+    --color-gradient: linear-gradient(90deg, var(--color-orange-50), var(--color-dark-orange-100));
+}
+
+        body {
+            padding-top: 30px;
+            font-family: Arial, sans-serif;
+            background: var(--color-gradient);
+            margin: 0;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .container {
+            padding: 10px;
+        }
+        .post {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            display: inline-block;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 200px;
+            height: 320px; 
+            transition: transform 0.3s ease-in-out; 
+            position: relative; 
+        }
+        .post:hover {
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+        .post img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            width: 100%;
+            height: 150px; 
+        }
+        .post h2 {
+            margin-top: 5px;
+        }
+        .post p {
+            margin-top: 5px;
+            max-height: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .voting {
+            font-weight: bold;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: #ffb71c;
+            border: 1px solid #ccc;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        a {
+            text-decoration: none;
+            color: rgb(20, 20, 20);
+        }
+        #detalhes {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out; 
+        }
+        #detalhes.active {
+            opacity: 1; 
+        }
+        .report-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 15px 30px; 
+            cursor: pointer;
+            font-size: 18px; 
+            z-index: 999;
+            transition: background-color 0.3s ease-in-out; 
+        }
+        .report-button:hover {
+            background-color: #0056b3;
+        }

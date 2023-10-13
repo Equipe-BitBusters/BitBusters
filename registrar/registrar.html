@@ -9,37 +9,50 @@
     <link rel="stylesheet" href="registrar.css">
 </head>
 <body>
-    <a href="../index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
-    <div class="container">
-        <h2 style="text-align: left;">Registre-se</h2>
-        <form action="../menu_principal/menu_principal.html" method="post">
-            <div class="form-group">
-                <div class="input-with-icon">
-                    <i class="far fa-file icon"></i>
-                    <input type="text" id="cpf" name="cpf" placeholder="CPF" required oninput="formatarCPF(this)">
-                </div>
+    <main id="container">       
+        <form id="login_form" action="../menu_principal/menu_principal.html">
+            <div id="form_header">
+                <h1>Registre-se</h1>
             </div>
-
-            <div class="form-group">
-                <div class="input-with-icon">
-                    <i class="fas fa-key icon"></i>
-                    <input type="password" id="password" name="password" placeholder="Senha" required>
-                </div>
             </div>
-
-            <div class="form-group">
-                <div class="input-with-icon">
-                <i class="fas fa-key icon"></i>
-                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirme a Senha" required>
+            <div id="input">
+                <div class="input-box">
+                    <label for="name">
+                        CPF
+                        <div class="input-field">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="cpf" name="CPF" oninput="formatarCPF(this)" required>
+                    </label>
+                </div><br>
+                    <label for="senha">
+                        Senha
+                        <div class="input-field">
+                            <i class="fa-solid fa-key"></i>
+                            <input type="password" id="password" name="senha" required> 
+                        </div>
+                        <div class="input-box"><br>
+                            <label for="senha">
+                                Confirme a senha
+                                <div class="input-field">
+                                    <i class="fa-solid fa-key"></i>
+                                    <input type="password" id="password" name="senha" required> 
+                                </div>
+                    </label>
                 </div>
-            </div>
-            
-            <div class="form-group">
-                <input type="submit" value="Registrar">
+            </div> 
+                <button type="submit" id="register_button">
+                        Registrar
+                </button>
+            <div class="registre">
+                <p><br>
+                    Já possui uma conta?
+                    <a href="../index.html">
+                    Entre agora
+                    </a>
+                </p>
             </div>
         </form>
-    </div>
-    <p class="register-link">Já possui uma conta? <a href="../index.html"> Entre agora</a></p>
+    </main>
 
     <script>
         function formatarCPF(campo) {
@@ -53,6 +66,5 @@
             campo.value = valor;
         }
     </script>
-
 </body>
 </html>
